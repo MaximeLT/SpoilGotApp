@@ -42,13 +42,20 @@ public class IntegrationTest {
         GotCharacterFront[] persos = this.restTemplate.getForObject("http://localhost:" + port + "/characters",
                 GotCharacterFront[].class);
         Assert.assertTrue(Arrays.stream(persos).anyMatch(truc -> truc.getName().contains("Stark")));
-
-
     }
 
     @Test
     public void shouldReturn404ifWrongUrl() throws Exception {
         assertThat(this.restTemplate.getForEntity("http://localhost:" + port + "/kamoulox",
                 String.class).getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
+
+    @Test
+    public void shouldReturn200onAnyPage() throws Exception {
+        int seasonTotalNb = 8;
+        for(int i = 1; i <= seasonTotalNb; i++) {
+            assertThat(this.restTemplate.getForEntity("http://localhost:" + port + "/characters?season=" + i,
+                    String.class).getStatusCode()).isEqualTo(HttpStatus.OK);
+        }
     }
 }

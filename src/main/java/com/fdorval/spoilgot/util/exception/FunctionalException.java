@@ -44,7 +44,7 @@ public class FunctionalException extends Exception {
      * throws an exception
      *
      * @param message
-     * @param e
+     * @param
      * @throws FunctionalException
      */
     public static void throwFunctionalException(String message) throws FunctionalException {
