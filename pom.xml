@@ -9,9 +9,9 @@
         <version>2.2.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.maxime_letexie</groupId>
+    <groupId>com.maxime_letexier</groupId>
     <artifactId>spoilgot</artifactId>
-    <version>maxime_letexie</version>
+    <version>maxime_letexier</version>
     <packaging>war</packaging>
     <name>spoilgot</name>
     <description>Demo project for Spring Boot</description>
